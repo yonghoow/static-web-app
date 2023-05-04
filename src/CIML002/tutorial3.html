@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>Process Management</title>
+</head>
+
+<body>
+  <main>
+    <h1>CIML002 Tutoral 3</h1>
+  </main>
+
+  <ol>
+    <li>List the 4 essential managers of an operating system <p>Ans: Memory, process, device, file managers</p></li>
+    <li>When an operating system has networking capability, what is the additional fifth essential manager it must have?
+        <p>Ans: Network manager</p>
+    </li>
+    <li>What are the tasks that each of the managers of an operating system will perform?
+        <p>Ans: Process manager - allocating CPU resources to processes.</p>
+        <p>File manager - manages common operations (create, copy, etc) on a file</p>
+	<p>Device manager - monitors all hardware peripheral devices attached to a computer.</p>
+	<p>Memory manager - performs memory (RAM) management to programs</p>
+    </li>
+    <li>What is the computer hardware component that would be managed by the memory manager, and processor management respectively? 
+        <p>Ans: Memory manager manages RAM. Processor allocates CPU to a process</p>
+    </li>
+    <li>Differentiate between a job and a process
+        <p>Ans: A process is a program in execution. A job is a complete unit of work under execution. A job can consist of many processes </p>
+    </li>
+    <li>What is a processor manager made up of?
+	<p>Ans: Process manager involves creating, scheduling, managing deadlock, and terminating processes </p>
+    </li>
+    <li>Illustrate the 5 job/process states in a typical job and state which scheduler (job or process) handle it.
+	<p>Ans: Hold, run. wait, ready, finish. Process scheduler handles it.</p>
+    </li>
+    <li>What is a Process Control Block (PCB)?
+	<p>Ans: A process control block is maintained for a process throughout its lifetime, and is deleted once the process terminates</p>
+    </li>
+    <li>Explain what the difference between preemptive and non-preemptive scheduling policy.
+	<p>Ans: Under non-preemptive scheduling, once a CPU has been allocated to a process, it cannot be interrupted until it finishes or terminates</p>
+	<p>With preemptive, a process can be interrupted during its course of action</p>
+    </li>
+    <li>List the 4 process scheduling algorithms and state if it is preemptive or non-preemptive.
+	<p>Ans: FIrst come, first serve - non-preemptive </p>
+	<p>Shortest next job - non-preemptive</p>
+	<p>shortest remaining time - pre-emptive</p>
+	<p>round robin - preemptive</p>
+    </li>
+    <li>Given the 3 jobs and their corresponding CPU cycle or run time in milliseconds as shown in the below table, calculate their average turn-around time, based on
+	<table>
+	    <tr>
+		<th>Job:</th>
+		<th>A</th>
+		<th>B</th>
+		<th>C</th>
+	    </tr>
+	    <tr>
+		<td>CPU cycles (ms)</td>
+		<td>8</td>
+		<td>3</td>
+		<td>5</td>
+   	    </tr>
+	</table>
+	<ul>
+	    <li><b>First-come, first-served (FCFS) </b> process scheduling algorithm, assuming Job A arrives first, followed by Job B, and then Job C.</li>
+	    <li><b>First-come, first-served (FCFS) </b> process scheduling algorithm, assuming Job C arrives first, followed by Job B, and then Job A.</li>
+	    <li><b>Shortest job next (SJN) </b> process scheduling algorithm </li>
+	</ul>
+	<p>Ans: FCFS (A, B, C). Ave turn-around time = (0 + 8 + 3) / 3 = 3.66 ms</p>
+	<p>FCFS (C, B, A). Ave turn-around time = (0 + 5 + 3) / 3 = 2.66 ms</p>
+	<p>SJN (B, C, A). Ave turn-around time = (0 + 3 + 5) / 3 = 2.66 ms </p>	
+    </li>
+    <li>Using Shortest Remaining Time (SRT) preemptive process scheduling algorithm, derive their average turn-around time, as they arrive in the sequence as shown
+	<table>
+	    <tr>
+		<td>Arrival Time:</td>
+		<td>0</td>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	    </tr>
+	    <tr>
+		<td>Job</td>
+		<td>A</td>
+		<td>B</td>
+		<td>C</td>
+		<td>D</td>
+   	    </tr>
+	    <tr>
+		<td>CPU cycle (ms)</td>
+		<td>6</td>
+		<td>3</td>
+		<td>1</td>
+		<td>4</td>
+   	    </tr>
+	</table>
+	<p>Ans: SRT (A,B,C,B,D,A). Ave turn-around time = (9 + 2 + 3 + 5) / 4 = 4.75 ms </p>	
+    </li>
+    <li>
+    Using Round Robin preemptive process scheduling algorithm, derive their average turn-around time, as they arrive in the sequence as shown. (Assume a time slice of 4ms)
+	<table>
+	    <tr>
+		<td>Arrival Time:</td>
+		<td>0</td>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	    </tr>
+	    <tr>
+		<td>Job</td>
+		<td>A</td>
+		<td>B</td>
+		<td>C</td>
+		<td>D</td>
+   	    </tr>
+	    <tr>
+		<td>CPU cycle (ms)</td>
+		<td>8</td>
+		<td>4</td>
+		<td>9</td>
+		<td>5</td>
+   	    </tr>
+	</table>
+	<p>Ans: Not covered in test </p>
+    </li>
+  </ol>
+
+  <a href="../index.html">Go Back</a>
+</body>
+
+</html>
