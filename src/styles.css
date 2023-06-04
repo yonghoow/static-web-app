@@ -20,6 +20,10 @@ main > h1 {
   font-size: 3.5em;
 }
 
+table td {
+  word-wrap: break-word;
+}
+
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
