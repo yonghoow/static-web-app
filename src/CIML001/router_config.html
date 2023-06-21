@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>Router Configuration</title>
+</head>
+
+<body>
+  <main>
+    <h1>Router configuration</h1>
+    <p>change hostname</p>
+    <ul>
+      <li>Router(config)# hostname R1</li>
+      <li>R1(config)#</li>
+    </ul>
+
+    <p>configure console passwords</p>
+    <ul>
+      <li>R1(config)# line console 0</li>
+      <li>R1(config-line)# password cisco</li>
+      <li>R1(config-line)# login</li>      
+    </ul>
+    
+    <p>vty lines passwords</p>
+    <ul>
+      <li>R1(config)# line vty 0 15</li>
+      <li>R1(config-line)# password cisco</li>
+      <li>R1(config-line)# login</li>      
+    </ul>
+    
+    <p>enable secret password</p>
+    <ul>
+      <li>R1(config)# enable secret class</li>
+    </ul>
+    
+    <p>encrypt all plaintext password</p>
+    <ul>
+      <li>R1(config)# service password-encryption</li>
+    </ul>
+    
+    <p>banner message</p>
+    <ul>
+      <li>R1(config)# banner motd #Authorized Access Only#</li>
+    </ul>
+    
+    <p>Save the configuration</p>
+    <ul>
+      <li>R1# copy running-config startup-config</li>
+    </ul>
+    
+    <p>configure router ip address</p>
+    <ul>
+      <li>R1(config)# interface gigabitEthernet 0/0/0</li>
+      <li>R1(config-if)# description Link to LAN</li>
+      <li>R1(config-if)# ip address 192.168.1.253 255.255.255.0</li>
+      <li>R1(config-if)# ipv6 address 2001:db8:acad:10::1/64</li>
+      <li>R1(config-if)# ipv6 address FE80::1 link-local</li>
+      <li>R1(config-if)# no shutdown</li>
+    </ul>
+    
+    <p>unicast-routing</p>
+    <ul>
+      <li>R1(config)# ipv6 unicast-routing</li>
+    </ul>
+    
+  </main>
+
+   <a href="../index.html">Go Back</a>
+</body>
+
+</html>
