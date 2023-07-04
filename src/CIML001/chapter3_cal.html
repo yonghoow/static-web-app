@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>Chapter3 Calculations</title>
+</head>
+
+<body>
+  <main>
+    <h1>Chapter 3 Calculations</h1>
+    <p>subnetting</p>
+    <ul>
+      <li>ISP given address: 221.88.88.0 /24 /li>
+      <li>6 subnets needed</li>
+      <li>Address class: C</li>
+      <li>default subnet mask: 255.255.255.0</li>
+      <li>No. of bits borrowed: 3</li>
+      <li>Total no. of subnets: 8</li>
+      <li>Total no. of host address: 32</li>
+      <li>No. of usable address: 30</li>
+      <li>Custom subnet mask: 255.255.255.224</li>
+    </ul>
+
+    <p>working</p>
+    <ul>
+      <li>default subnet mask: 221.88.88.00000000</li>
+      <li>custom subnet mask: 221.88.88.11100000</li>
+    </ul>
+    
+    <p>subnet table</p>
+    <table>
+      <tr>
+        <th>S/N</th>
+        <th>Network Address</th>
+        <th>Usable Range</th>
+        <th>Broadcast</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>221.88.88.0</td>
+        <td>.1 - .30</td>
+        <td>221.88.88.31</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>221.88.88.32</td>
+        <td>.33 - .62</td>
+        <td>221.88.88.63</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>221.88.88.64</td>
+        <td>.65 - .94</td>
+        <td>221.88.88.95</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>221.88.88.96</td>
+        <td>.97 - .126</td>
+        <td>221.88.88.127</td>
+      </tr>
+    </table>
+  </main>
+
+   <a href="../index.html">Go Back</a>
+</body>
+
+</html>
