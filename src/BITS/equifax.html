@@ -34,6 +34,213 @@
         (if you use single line spacing)
       </li>
     </ul>
+    <h2>Preventive Controls</h2>
+    <p>Avoid an incident from happening</p>
+    <h3>Administrative</h3>
+    <ol>
+      <li>Data classification and labelling</li>
+      <p>Protect private information like Equifax systems using a 
+      susceptible version of Apache Struts2 from being indexed by 
+      search engines. Put the information on private access website</p>
+      
+      <li>Data retension policy</li>
+      <p>
+        Avoid storing sensitive information beyong the time necessary 
+        to provide the service.
+        Unnecessary retaining of customer's information that was no 
+        longer needed lead to broader exposure of customer's information 
+        during an attack. 
+      </p>
+      
+      <li>Update communication policy</li>
+      <p>
+        Equifax's IS team received alerts from US Computer Emergency 
+        Readiness Team (US-CERT) about Apache Struts2 on Mar 8 2017, 
+        before the time of compromise on May 13 2017.  
+      </p>
+      <p>
+        The person operating the Automated Consumer Interview System 
+        (ACIS) did not receive the alert as he/she was not part of the
+        email recipient list. Thus, the patching process was not
+        proactive. 
+      </p>
+      <p>
+        Recommendation: there should be effective communication policy 
+        between the IS and IT teams.
+      </p>
+      
+      <li>Executive priorities</li>
+      <p>
+        Executive compensation rules were focused on profit, motivating 
+        them to prioritize revenue above all other considerations, 
+        including information security. Thus information security was not
+        given much priority which lead to security breaches.
+      </p>
+      <p>
+        The recommendation is that IS and IT teams should report directly 
+        to either Chief Risk Officer, Chief Executive Officer or Chief 
+        Information Officer. This ensures security is represented at 
+        the executive level.
+      </p>
+      
+      <li>Security Awareness framework</li>
+      <p>
+        Request management to have company wide cyber security 
+        management framework and ensure its adequate staffing and 
+        budget.
+      </p>
+    </ol>
+    
+    <h3>Physical</h3>
+    
+    <h3>Technical</h3>
+    <ol>
+      <li>Implement WAF and DLP system</li>
+      <p>Equifax's Automated Consumer Interview System (ACIS) system 
+      comprises 2 web servers, 2 application servers 
+      and a network-level firewall. This system was open to accepting 
+      malicious requests as it was not protected by a WAF.</p>
+      <p>A Web Application Firewall (WAF) is a layer of protection in 
+      addition to network-level firewall. It protects web applicaiton 
+      from SQL injections, cross-site scripting (XSS) and distributed 
+      Denial of Service (DDoS) attacks. WAF could have prevented the
+      exploitation of Apache Struts2 vulnerability.</p>
+      <p>A Data Loss Prevention (DLS) system which identify, monitor and  
+      potentially avert unauthorized moves of sensitive data in and 
+      out of the network. DLS could have prevented the 
+      massive exfiltration 14-16 Gb of data during 76 days undetected.</p>
+      
+      <li>Isolation or compartmentalization</li>
+      <p>
+        Computer sub-systems should be compartmentalized using physical 
+        devices or security controls. Equifax's Automated Consumer 
+        Interview System (ACIS) application was not 
+        segmented from other unrelated databases. The Sun systems, which 
+        hosted ACIS, had shared file systems, notes or configuration 
+        files from one system and can be accessed from other systems. 
+      </p>
+      <p>
+        Un-encrypted credentials to other sensitive databases were 
+        stored. Excessive amount of confidential information and 
+        Personal Identifiable Information (PII) was also stored.
+      </p>
+      
+      <li>Encryption for Personal Indentifiable Information (PII)</li>
+      <p>
+        None of the PII from the stolen data was encrypted, therefore 
+        compormising the confidentialty of the stolen PII. Encryption, 
+        truncation, masking or hashing of the critical PII is needed. 
+        Proper management of encryption keys can protect encrypted data. 
+        Even if encrypted data was stolen but encryption keys are not 
+        comporomised, event is not considered a data breach.
+      </p>
+      
+      <li>Strong password</li>
+      <p>
+        Some Equifax's IT system privileged accounts have weak passwords. 
+        E.g. one database has a four lowercase-letter password which 
+        matched the name of the database. A portal used for credit 
+        dispute had username "admin" and password "admin" for an
+        administrative account.  
+      </p>
+      <p>
+        Suggested strong password should be at least 12 characters long, 
+        a combination of uppercase, lowercase letters, numbers and 
+        symbols. Not a word that can be found in the dictionary, or 
+        name of a person, character, product or organization.
+      </p>
+      <li>Least privilege access</li>
+      <p>
+        The principle of least privilege - every user in a system 
+        should be granted only a minimum set of permissions to perform 
+        the desginated task.    
+      </p>
+      <p>
+        Equifax's Automated Consumer Interview System (ACIS) has 
+        excessive access to other systems not required 
+        for its operations. ACIS only needed access to 3 databases to 
+        function, but it was unnecessarily connected to many more.
+      </p>
+      <li>Knowledge in use of vulnerability scanners</li>
+      <p>
+        The Equifax IS team scan the system exposed to the internet 
+        using McAfee Vulnerability Manager tool. However, the scan was 
+        on the root directory, not the subdirectory where Apache Struts2
+        was listed. 
+      </p>
+      <p>
+        It was known that the detection rate of vulnerabilty scanners 
+        did not exceed 80% for most scans. Also, Apache Struts2 was not 
+        managed via a package manager but was distributed as a standalone
+        JAR file.
+      </p>
+      <p>
+        The identification of Apache Struts2 vulnerability also require 
+        knowledge of the application URL path. When not provided, the 
+        scanner did not pick up the vulnerability. 
+      </p>
+      <p>
+        The IS team accepted the false-negative result as confirmation 
+        that Equifax's system did not have a problem.
+      </p>
+      
+      <li>Adopt Zero-trust security model</li>
+      <p>
+        The components of a system must mistrust all requests from 
+        other parts of the system until they are authenticated and 
+        authorized.
+      </p>
+      
+    </ol>
+    <h2>Defective Controls</h2>
+    <p>Detect an incident that has happened and help trace the perpetrators</p>
+    <h3>Administrative</h3>
+    <h3>Physcial</h3>
+    <h3>Technical</h3>
+    
+    <ol>
+      <li>logs</li>
+      <p>Engaged Madiant security team. Both Equifax and Mandiant
+        security teams analyzed digital forensic data using tools  
+        including Moloch - by keeping a record of network's internal 
+        communication and data traffic. 
+      </p>
+      <p>
+        Using Moloch, investigators reconstructed every step: once the 
+        attackers found the vulnerability, they installed a backdoor 
+        known as a web shell. 
+      </p>
+      <p>
+        Eventually the intruders installed more than 30 web shells, each 
+        on a different web address. Groups known to exploit with web 
+        shells most effectively include teams with links to Chinese
+        Intelligence.  
+      </p>
+      <li>Intruder Detection and Prevention System (IDS/IPS)</li>
+      <p>
+        Automated SSL certification management tool was implemented but 
+        did not complete before the hacking incident. Avoid manual 
+        process of tracking and updating several hundred SSL certificates.
+        This process was error prone and depended on individual responsible 
+        for IT systems. 
+      </p>
+      <p>
+        Equifax's IDS/IPS was not able to detect malicious traffic leaving 
+        the system due to an expired SSL certificate in Nov 2016.
+      </p>
+      <p>
+        Lack of alerts to the IS team that the IDS/IPS was not operational 
+        for 9 months (until July 2017). Lack of warning possible as system 
+        settings allow traffic to bypass IDS/IPS in case it was unable to 
+        function.
+      </p>
+    </ol>
+  
+      
+    <h2>Corrective Controls</h2>
+    <p>Fixes components and systems after an incident has happened</p>
+    <h3>Server Images</h3>
+    <h3>Real time recovery systems</h3>
   </main>
 
    <a href="../index.html">Go Back</a>
