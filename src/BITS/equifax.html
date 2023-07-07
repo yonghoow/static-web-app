@@ -40,8 +40,8 @@
     <ol>
       <li>Data classification and labelling</li>
       <p>Protect private information like Equifax systems using a 
-      susceptible version of Apache Struts2 from being indexed by 
-      search engines. Put the information on private access website</p>
+      susceptible version of Apache Struts web framework from being indexed 
+      by search engines. Put the information on private access website</p>
       
       <li>Data retension policy</li>
       <p>
@@ -55,8 +55,9 @@
       <li>Update communication policy</li>
       <p>
         Equifax's IS team received alerts from US Computer Emergency 
-        Readiness Team (US-CERT) about Apache Struts2 on Mar 8 2017, 
-        before the time of compromise on May 13 2017.  
+        Readiness Team (US-CERT) about Apache Struts framework 
+        vulnerability on Mar 8 2017, before the time of compromise 
+        on May 13 2017.  
       </p>
       <p>
         The person operating the Automated Consumer Interview System 
@@ -88,7 +89,11 @@
         Request management to have company wide cyber security 
         management framework and ensure its adequate staffing and 
         budget.
+        <a href="https://controlsframework.equifax.com/home">
+          Equifax new security framework </a> 
+ 
       </p>
+      
     </ol>
     
     <h3>Physical</h3>
@@ -104,7 +109,7 @@
       addition to network-level firewall. It protects web applicaiton 
       from SQL injections, cross-site scripting (XSS) and distributed 
       Denial of Service (DDoS) attacks. WAF could have prevented the
-      exploitation of Apache Struts2 vulnerability.</p>
+      exploitation of Apache Struts vulnerability.</p>
       <p>A Data Loss Prevention (DLS) system which identify, monitor and  
       potentially avert unauthorized moves of sensitive data in and 
       out of the network. DLS could have prevented the 
@@ -165,19 +170,19 @@
       <p>
         The Equifax IS team scan the system exposed to the internet 
         using McAfee Vulnerability Manager tool. However, the scan was 
-        on the root directory, not the subdirectory where Apache Struts2
-        was listed. 
+        on the root directory, not the subdirectory where Apache Struts
+        framework was listed. 
       </p>
       <p>
         It was known that the detection rate of vulnerabilty scanners 
-        did not exceed 80% for most scans. Also, Apache Struts2 was not 
+        did not exceed 80% for most scans. Also, Apache Struts was not 
         managed via a package manager but was distributed as a standalone
         JAR file.
       </p>
       <p>
-        The identification of Apache Struts2 vulnerability also require 
-        knowledge of the application URL path. When not provided, the 
-        scanner did not pick up the vulnerability. 
+        The identification of Apache Struts framework vulnerability also 
+        require knowledge of the application URL path. When not provided, 
+        the scanner did not pick up the vulnerability. 
       </p>
       <p>
         The IS team accepted the false-negative result as confirmation 
@@ -200,13 +205,14 @@
     
     <ol>
       <li>logs</li>
-      <p>Engaged Madiant security team. Both Equifax and Mandiant
+      <p>Consult Mandiant (now part of Google cloud) security team. 
+        Both Equifax and Mandiant
         security teams analyzed digital forensic data using tools  
-        including Moloch - by keeping a record of network's internal 
-        communication and data traffic. 
+        including Arkime (formerly known as Moloch) - by keeping a 
+        record of network's internal communication and data traffic. 
       </p>
       <p>
-        Using Moloch, investigators reconstructed every step: once the 
+        Using Arkime, investigators reconstructed every step: once the 
         attackers found the vulnerability, they installed a backdoor 
         known as a web shell. 
       </p>
@@ -214,7 +220,11 @@
         Eventually the intruders installed more than 30 web shells, each 
         on a different web address. Groups known to exploit with web 
         shells most effectively include teams with links to Chinese
-        Intelligence.  
+        Intelligence. In total, the attackers ran approximately 9,000 queries
+        on Equifax’s system, obtaining names, birth dates and social security 
+        numbers for nearly 145 million Americans. Wu Zhiyong, Wang Qian, 
+        Xu Ke and Liu Lei, members of the PLA’s 54th Research Institute, 
+        a component of the Chinese military were charged. 
       </p>
       <li>Intruder Detection and Prevention System (IDS/IPS)</li>
       <p>
@@ -241,6 +251,94 @@
     <p>Fixes components and systems after an incident has happened</p>
     <h3>Server Images</h3>
     <h3>Real time recovery systems</h3>
+    
+    <h2>Preventive Control Costs</h2>
+    <table>
+      <tr>
+        <th>Control</th>
+        <th>Role / Product</th>
+        <th>Cost per year ($)</th>
+      </tr>
+      <tr>
+        <td>Private web access</td>
+        <td>new web developer</td>
+        <td>65,000</td>
+      </tr>
+      <tr>
+        <td>Data retension policy</td>
+        <td>new data analyst</td>
+        <td>70,000</td>
+      </tr>
+      <tr>
+        <td>Update communication policy</td>
+        <td>IT staff</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <td>Executive priorities</td>
+        <td>Executive committee</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <td>Security awareness framework</td>
+        <td>CIO, IT, IS teams</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <td>Web Application Firewall (WAF)</td>
+        <td>Microsoft</td>
+        <td>1,080</td>
+      </tr>
+      <tr>
+        <td>Data Loss Protection (DLP)</td>
+        <td>ManageEngine</td>
+        <td>795</td>
+      </tr>
+      <tr>
+        <td>System compartmentalization</td>
+        <td>new system engineer</td>
+        <td>100,000</td>
+      </tr>
+      <tr>
+        <td>Encryption and strong password</td>
+        <td>new IT administrator</td>
+        <td>80,000</td>
+      </tr>
+      <tr>
+        <td>Least privilege access</td>
+        <td>new database administrator</td>
+        <td>60,000</td>
+      </tr>
+      <tr>
+        <td>Vulnerability scanner</td>
+        <td>refresher training</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <td>zero-trust security model</td>
+        <td>CIO, IT, IS teams</td>
+        <td>---</td>
+      </tr>
+    </table>
+    
+    <h2>Defensive Control Costs</h2>
+    <table>
+      <tr>
+        <th>Control</th>
+        <th>Role / Product</th>
+        <th>Costs per year ($)</th>
+      </tr>
+      <tr>
+        <td>Network logs forensics</td>
+        <td>Mandiant (now part of Google cloud)</td>
+        <td>50,000</td>
+      </tr>
+      <tr>
+        <td>SSL management tool</td>
+        <td>Solar Winds</td>
+        <td>3,346</td>
+      </tr>
+    </table>
   </main>
 
    <a href="../index.html">Go Back</a>
