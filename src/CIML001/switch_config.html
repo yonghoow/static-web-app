@@ -63,6 +63,26 @@
       <li>S1# show ip interface brief</li>
     </ul>
     
+    <p>Legacy inter-VLAN routing</p>
+    <ul>
+      <li>SW1(config)# vlan 10</li>
+      <li>SW1(config-vlan)# name staff</li>
+      <li>SW1(config-vlan)# exit</li>
+    </ul>
+    
+    <ul>
+      <li>SW1(config)# interface f0/1</li>
+      <li>SW1(config-if)# switchport mode access</li>
+      <li>SW1(config-if)# switchport access vlan 10</li>
+      <li>SW1(config-if)# exit</li>
+    </ul>
+    
+    <ul>
+      <li>SW1(config)# interface f0/10</li>
+      <li>SW1(config-if)# switchport mode access</li>
+      <li>SW1(config-if)# switchport access vlan 10</li>
+      <li>SW1(config-if)# exit</li>
+    </ul>
     
   </main>
 
