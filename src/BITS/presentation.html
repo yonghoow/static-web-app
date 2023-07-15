@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>Table of Contents</title>
+</head>
+
+<body>
+  <main>
+
+	<h3>Preventive Control</h3>
+	<ol>
+	  <li>Private Web access</li>
+	  <p>
+		Put private information regarding Equifax's susceptible 
+		version of web framework on private access website
+		not indexed by search engine.
+	  </p>
+	  <li>Data Retention Policy</li>
+	  <p>
+		Avoid storing customer's sensitive information beyond the time 
+		necessary to provide the service.
+	  </p>
+	  <li>Update communication policy</li>
+	  <p>
+		The person in charge of patching the web portal
+		did not receive the alert as he/she was not part of the email recipient 
+		list. Thus, the patching process was not proactive. 
+	  </p>
+	  <li>Security Awareness Framework</li>
+	  <p>
+		Request management to have company-wide cyber security management
+		framework and ensure its adequate staffing and budget. Equifax can also
+		share its latest security framework with other companies.
+	  </p>
+	  <li>Web Application Firewall (WAF)</li>
+	  <p>
+		 It protects web applications from SQL injections and other attacks. 
+		 WAF could have prevented the exploitation of Equifax's vulnerability.
+	  </p>
+	</ol>
+	
+	<h3>Preventive Control</h3>
+	<ol>
+	  <li>Data Loss Prevention (DLS) system</li>
+	  <p>
+		 It identifies, monitors and potentially averts unauthorized moves 
+		 of sensitive data in and out of the network. DLS could have prevented 
+		 the massive out flow of 14-16 Gb of data for 76 days undetected.
+	  </p>
+	  <li>Segmentation of systems</li>
+	  <p>
+		Equifax had shared file systems, notes or configuration 
+		files from one system and can be accessed from other systems
+	  </p>
+	  <li>Encryption for Personal Identifiable Information (PII)</li>
+	  <p>
+		None of the PII from the stolen data was encrypted, therefore
+		compromising the confidentiality of the stolen PII. Encryption, truncation,
+		masking or hashing of the critical PII is needed.
+	  </p>
+	  <li>Strong password</li>
+	  <p>
+		one database has a password which matched
+		the name of the database. An online portal had default username
+		"admin" and password "admin" for an administrative account.
+	  </p>
+	  <li>Knowledge in use of vulnerability scanners</li>
+	  <p>
+		Equifax IS team scanned the system exposed to the internet at root
+		directory, not the subdirectory where vulnerabil;ity was listed. 
+		Better training is needed.
+	  </p>
+	</ol>
+	<h3>Defective Control</h3>
+	<ol>
+	  <li>Intruder Detection and Prevention System (IDS/IPS)</li>
+	  <p>
+		Equifax's IDS/IPS was not able to detect malicious traffic leaving the
+		system due to an expired SSL certificate from Nov 2016 to July 2017. 
+		A working Automated SSL certificate management tool is needed.
+	  </p>
+	  <li>Network logs forensics</li>
+	  <p>
+		Consult Mandiant (now part of Google cloud) security team. Both Equifax
+		and Mandiant security teams analyzed digital forensic data, they found
+		attackers installed a backdoor in Equifax's servers.
+	  </p> 
+	</ol>
+	<h3>Corrective Control</h3>
+	<ol>
+	  <li>Server Images</li>
+	  <p>
+		One way to correct online servers infected by malware is 
+		restoring from offline server images, which remain 
+		untouched by the threat actors. 
+ 	  </p>
+	</ol>
+	
+	<h3>Implementation of controls</h3>
+	<img src="../pictures/equifax_control.png" alt="Equifax controls">
+	
+	<h3>Costs and Justification</h3>
+	
+	<h2>Preventive Control Costs</h2>
+	<table>
+      <tr>
+        <th>Control</th>
+        <th>Role / Product</th>
+        <th>Cost per year ($)</th>
+      </tr>
+      <tr>
+        <td>Private web access</td>
+        <td>new web developer</td>
+        <td>65,000</td>
+      </tr>
+      <tr>
+        <td>Data retention policy</td>
+        <td>new data analyst</td>
+        <td>70,000</td>
+      </tr>
+      <tr>
+        <td>Web Application Firewall (WAF)</td>
+        <td>Microsoft</td>
+        <td>1,080</td>
+      </tr>
+      <tr>
+        <td>Data Loss Protection (DLP)</td>
+        <td>ManageEngine</td>
+        <td>795</td>
+      </tr>
+      <tr>
+        <td>System compartmentalization</td>
+        <td>new system engineer</td>
+        <td>100,000</td>
+      </tr>
+      <tr>
+        <td>Encryption and strong password</td>
+        <td>new IT administrator</td>
+        <td>80,000</td>
+      </tr>
+    </table>
+	
+	<h2>Defensive Control Costs</h2>
+    <table>
+      <tr>
+        <th>Control</th>
+        <th>Role / Product</th>
+        <th>Costs per year ($)</th>
+      </tr>
+      <tr>
+        <td>Network logs forensics</td>
+        <td>Mandiant (now part of Google cloud)</td>
+        <td>50,000</td>
+      </tr>
+      <tr>
+        <td>SSL management tool</td>
+        <td>Solar Winds</td>
+        <td>3,346</td>
+      </tr>
+    </table>
+	
+	<h2>Corrective Control Costs</h2>
+    <table>
+      <tr>
+        <th>Control</th>
+        <th>Role / Product</th>
+        <th>Costs per year ($)</th>
+      </tr>
+      <tr>
+        <td>Server Images</td>
+        <td>Acronis</td>
+        <td>999</td>
+      </tr>
+    </table>
+    
+	</main>
+
+   <a href="../index.html">Go Back</a>
+</body>
+
+</html>
