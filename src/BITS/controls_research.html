@@ -141,28 +141,61 @@
       prevented from enabling them.
     </p>
     
-    <h3>18.8.3.1 Ensure 'Include command line in process creation events' is set to 'Disabled'</h3>
+    <h3>18.8.3.1 Ensure 'Include command line in process creation events' 
+        is set to 'Disabled'</h3>
     <h4>Problem:</h4>
+    
     <p>
-      Automatically connecting to an open hotspot or network can introduce the system 
-      to a rogue network with malicious intent.
+      When this policy setting is enabled, any user who has read access 
+      to the security events can read the command-line arguments for any 
+      successfully created process. Command-line arguments may contain 
+      sensitive or private information such as passwords or user data.
     </p>
+    
     <h4>Improvement:</h4>
     <p>
-      Connect to suggested open hotspots, Connect to networks shared by my contacts, and 
-      Enable paid services will each be turned off and users on the device will be 
-      prevented from enabling them.
+      Sensitive information like password and user data not shown in 
+      security events.
     </p>
     
     <h3>18.8.12.1 Ensure 'Boot-Start Driver Initialization Policy' is set to 'Enabled: Good, 
         unknown and bad but critical'</h3>
     <h4>Problem:</h4>
+    
     <p>
       If your malware detection application does not include an Early Launch Antimalware 
-      boot-start driver or if your Early Launch Antimalware boot-start driver has been 
-      disabled, this setting has no effect
+      boot-start driver or if your Early Launch Antimalware boot-start driver 
+      has been disabled, all boot-start drivers are initialized.
     </p>
+    
     <h4>Improvement:</h4>
+    <p>
+      This policy setting allows you to specify which boot-start drivers 
+      are initialized based on a classification determined by an Early 
+      Launch Antimalware boot-start driver. The Early Launch Antimalware 
+      boot-start driver can return the following classifications for 
+      each boot-start driver: 
+    </p>
+    <p>
+      Good: The driver has been signed and has not been tampered with.
+    </p>
+    <p>
+      Bad: The driver has been identified as malware. It is recommended that 
+      you do not allow known bad drivers to be initialized. 
+    </p>
+    <p>
+      Bad, but required for boot: The driver has been identified as malware, 
+      but the computer cannot successfully boot without loading this driver.</b>
+      Unknown: This driver has not been attested to by your malware detection 
+      application and has not been classified by the Early Launch Antimalware 
+      boot-start driver. 
+    </p>
+    
+    <p>
+      If you enable this policy setting you will be able to choose which 
+      boot-start drivers to initialize the next time the computer is started.
+    </p>
+    
     <p>
       This policy setting helps reduce the impact of malware that has already 
       infected your system.
@@ -232,7 +265,8 @@
     <h4>Improvement:</h4>
     <p>
       Not displaying network selection UI prevents anyone from interacting with available 
-      networks UI on the logon screen.
+      networks UI on the logon screen. The PC's network connectivity state cannot be 
+      changed without signing into Windows.
     </p>
     
     <h3>18.8.25.3 'Do not enumerate connected users on domain-joined computers' is set to 
@@ -263,8 +297,8 @@
       This policy setting prevents local users from being enumerated on domain-joined computers.
     </p>
     
-    <h3>18.8.25.5 Ensure 'Turn off app notifications on the lock screen' is set to 'Enabled' - 
-        Enabled</h3>
+    <h3>18.8.25.5 Ensure 'Turn off app notifications on the lock screen' is set 
+        to 'Enabled'</h3>
     <h4>Problem:</h4>
     <p>
       App notifications might display sensitive business or personal data.
@@ -294,7 +328,9 @@
     <h4>Improvement:</h4>
     <p>
       Blocking untrusted fonts helps improve your network and employee protection 
-      against font-processing-related attacks
+      against font-processing-related attacks. Blocking prevent both remote 
+      (web-based or email-based) and local Exchange Online Protection(EOP) 
+      attacks that can happen during the font file-parsing process.
     </p>
     
   </main>
