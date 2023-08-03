@@ -36,13 +36,17 @@
     <h3>18.1.2.1 Ensure 'Allow Input Personalization' is set to 'Disabled'</h3>
     <h4>Problem:</h4>
     <p>
-      Automatic learning enables the collection of speech and handwriting patterns, typing history, contacts, 
-      and recent calendar information.
-      If this setting is Enabled sensitive information could be stored in the cloud or sent to Microsoft.
+      Text that is collected includes all outgoing messages in Windows Mail, 
+      and MAPI enabled email clients, as well as URLs from the Internet Explorer 
+      browser history. The information that is stored includes word frequency 
+      and new words not already known to the handwriting recognition engines 
+      (for example, proper names and acronyms). Deleting email content or 
+      the browser history does not delete the stored personalization data. 
+      Ink entered through Input Panel is collected and stored.  
     </p>
     <h4>Improvement:</h4>
     <p>
-      Disabling this prevents sensitive information to be stored in the cloud.
+      Automatic learning stops and any stored data is deleted. 
     </p>
     
     <h3>18.4.8.1 Ensure 'Enable insecure guest logons' is set to 'Disabled'</h3>
@@ -55,7 +59,8 @@
     </p>
     <h4>Improvement:</h4>
     <p>
-      prevent man-in-the-middle-attack
+      If you disable this policy setting, the SMB client will reject 
+      insecure guest logons and prevent man-in-the-middle-attack
     </p>
     
     <h3>18.4.11.2 Ensure 'Prohibit installation and configuration of Network Bridge on your 
@@ -235,6 +240,17 @@
     <p>
       Windows device is allowed to participate in cross-device experiences. A cross-device 
       experience is when a system can access app and send messages to other devices
+    </p>
+    <p>  
+      If you enable this policy setting, the Windows device is discoverable by other 
+      Windows devices that belong to the same user, and can participate in 
+      cross-device experiences.
+    </p>
+    <p>  
+      A cross-device experience is when a system can access app and send messages 
+      to other devices. In an enterprise environment only trusted systems should 
+      be communicating within the network. Access to any other system should be 
+      prohibited.
     </p>
     <h4>Improvement:</h4>
     <p>
