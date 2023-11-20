@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>ENNK Router Config</title>
+</head>
+
+<body>
+  <main>
+    <h1>ENNK Router Config</h1>
+    <p>set encrypted privileged EXEC mode password</p>
+    <ul>
+      <li>R2(config)#enable secret c1sco1234</li>      
+    </ul>
+
+    <p>Set the domain name to ccna-lab.com</p>
+    <ul>
+      <li>R2(config)#ip domain-name ccna-lab.com</li>
+    </ul>
+    
+    <p>Disable DNS lookup</p>
+    <ul>
+      <li>R2(config)#no ip domain lookup</li>
+    </ul>
+    
+    <p>encrypt plain text password</p>
+    <ul>
+      <li>R2(config)#service password-encryption</li>
+    </ul>
+
+    <p>Configure the username SSHadmin with an encrypted password of 55Hadm!n</p>
+    <ul>
+      <li>R2(config)#username SSHadmin secret 55Hadm!n</li>
+    </ul>
+
+    <p>Generate a set of crypto keys</p>
+    <ul>
+      <li>R2(config)#crypto key generate rsa</li>
+    </ul>
+
+    <p>Assign cisco as the console password</p>
+    <ul>
+      <li>R2(config)# line console 0</li>
+      <li>R2(config-line)#password cisco</li>
+    </ul>
+    
+    <p>configure sessions to disconnect after six minutes of inactivity</p>
+    <ul>
+      <li>R2(config-line)#exec-timeout 6 0</li>
+    </ul>
+
+    <p>To prevent console messages from interrupting commands, use the logging synchronous command</p>
+    <ul>
+      <li>R2(config-line)#logging synchronous</li>
+    </ul>
+
+    <p>enable login</p>
+    <ul>
+      <li>R2(config-line)#login</li>
+    </ul>
+
+    <p>Assign cisco as the vty password</p>
+    <ul>
+      <li>R2(config)# line vty 0 4</li>
+      <li>R2(config-line)# password cisco</li>
+    </ul>
+
+    <p>configure the vty lines to accept SSH connections only</p>
+    <ul>
+      <li>R2(config-line)# transport input ssh</li>
+    </ul>
+
+    <p>configure sessions to disconnect after six minutes of inactivity</p>
+    <ul>
+      <li>R2(config-line)# exec-timeout 6 0</li>
+    </ul>
+
+    <p>enable login using the local database</p>
+    <ul>
+      <li>R2(config-line)# login local</li>
+    </ul>
+
+    <p>Create a banner</p>
+    <ul>
+      <li>R2(config)# banner motd $ WARNING Authorized Users Only! $</li>
+    </ul>
+
+    <p>Enable IPv6 Routing</p>
+    <ul>
+      <li>R2(config)# ipv6 unicast-routing</li>
+    </ul>
+  </main>
+
+   <a href="../index.html">Go Back</a>
+</body>
+
+</html>
