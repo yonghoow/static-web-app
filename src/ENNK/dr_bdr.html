@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>ENNK Router Config</title>
+</head>
+
+<body>
+  <main>
+    <h1>DR and BDR</h1>
+    <p>Verify OSPF neighbor states</p>
+    <ul>
+      <li>RA# show ip ospf neighbor</li>      
+    </ul>
+    <p>Turn on ip OSPF adjacency debugging</p>
+    <ul>
+      <li>RA# debug ip ospf adj</li>      
+    </ul>
+    <p>Configure OSPF priorities on router</p>
+    <ul>
+      <li>RA(config)# interface g0/0</li>
+      <li>RA(config-if)# ip ospf priority 200</li>      
+    </ul>
+    <p>Force an election by resetting the OSPF process on the router</p>
+    <ul>
+      <li>RA# clear ip ospf process</li>      
+    </ul>
+  </main>
+
+   <a href="../index.html">Go Back</a>
+</body>
+
+</html>
