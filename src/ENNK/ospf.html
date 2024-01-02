@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>ENNK Router Config</title>
+</head>
+
+<body>
+  <main>
+    <h1>ENNK Router Config</h1>
+    <p>configure ospf</p>
+    <ul>
+      <li>router ospf 10</li>
+      <li>network 10.5.22.196 0.0.0.3 area 0</li>
+      <li>... exclude network b/w border and ISP router</li>
+    </ul>
+    
+    <p>passive interface</p>
+    <ul>
+      <li>passive-interface loopback 0</li>
+      <li>passive-interface loopback 1</li>
+      <li>... include interface b/w border and ISP router</li>
+      <li>... include interface to switch or end devices</li>
+    </ul>
+    
+    <p>default static route at the interface b/w border - ISP router, gateway of 
+    last resort </p>
+    <ul>
+      <li>router ospf 10</li>
+      <li>ip route 0.0.0.0 0.0.0.0 s0/0/1</li>
+    </ul>
+    
+    <p>border-ISP router should propagate the default static route</p>
+    <ul>
+      <li>router ospf 10</li>
+      <li>default-information originate</li>
+    </ul>
+  </main>
+
+   <a href="../index.html">Go Back</a>
+</body>
+
+</html>

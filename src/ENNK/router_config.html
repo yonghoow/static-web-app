@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,86 +11,91 @@
 <body>
   <main>
     <h1>ENNK Router Config</h1>
-    <p>set encrypted privileged EXEC mode password</p>
-    <ul>
-      <li>R2(config)#enable secret c1sco1234</li>      
-    </ul>
-
-    <p>Set the domain name to ccna-lab.com</p>
-    <ul>
-      <li>R2(config)#ip domain-name ccna-lab.com</li>
-    </ul>
     
-    <p>Disable DNS lookup</p>
-    <ul>
-      <li>R2(config)#no ip domain lookup</li>
-    </ul>
-    
-    <p>encrypt plain text password</p>
-    <ul>
-      <li>R2(config)#service password-encryption</li>
-    </ul>
-
-    <p>Configure the username SSHadmin with an encrypted password of 55Hadm!n</p>
-    <ul>
-      <li>R2(config)#username SSHadmin secret 55Hadm!n</li>
-    </ul>
-
-    <p>Generate a set of crypto keys</p>
-    <ul>
-      <li>R2(config)#crypto key generate rsa</li>
-    </ul>
-
     <p>Assign cisco as the console password</p>
     <ul>
-      <li>R2(config)# line console 0</li>
-      <li>R2(config-line)#password cisco</li>
-    </ul>
-    
-    <p>configure sessions to disconnect after six minutes of inactivity</p>
-    <ul>
-      <li>R2(config-line)#exec-timeout 6 0</li>
-    </ul>
-
-    <p>To prevent console messages from interrupting commands, use the logging synchronous command</p>
-    <ul>
-      <li>R2(config-line)#logging synchronous</li>
-    </ul>
-
-    <p>enable login</p>
-    <ul>
-      <li>R2(config-line)#login</li>
+      <li>line console 0</li>
+      <li>password cisco</li>
+      <li>login</li>
     </ul>
 
     <p>Assign cisco as the vty password</p>
     <ul>
-      <li>R2(config)# line vty 0 4</li>
-      <li>R2(config-line)# password cisco</li>
+      <li>line vty 0 4</li>
+      <li>password cisco</li>
+    </ul>
+    
+    <p>Set enable passwords to “cisco”</p>
+    <ul>
+      <li>enable password cisco</li>
     </ul>
 
-    <p>configure the vty lines to accept SSH connections only</p>
+    <p>Set enable secret passwords to “class”</p>
     <ul>
-      <li>R2(config-line)# transport input ssh</li>
+      <li>enable secret class</li>
+    </ul>
+
+    <p>Console and vty timeouts to be set to 15 minutes</p>
+    <ul>
+      <li>line console 0</li>
+      <li>exec-timeout 15 0</li>
+      <li>line vty 0 4</li>
+      <li>exec-timeout 15 0</li>
+    </ul>
+
+    <p>Mask all passwords displayed on the running configuration</p>
+    <ul>
+      <li>service password-encryption</li>
+    </ul>
+
+    <p>Set the domain name to ccna-lab.com</p>
+    <ul>
+      <li>ip domain-name ccna-lab.com</li>
+    </ul>
+
+    <p>Configure the username SSHadmin with an encrypted password of 55Hadm!n</p>
+    <ul>
+      <li>username SSHadmin secret 55Hadm!n</li>
+    </ul>
+
+    <p>Generate a set of crypto keys</p>
+    <ul>
+      <li>crypto key generate rsa</li>
     </ul>
 
     <p>configure sessions to disconnect after six minutes of inactivity</p>
     <ul>
-      <li>R2(config-line)# exec-timeout 6 0</li>
+      <li>exec-timeout 6 0</li>
+    </ul>
+
+    <p>To prevent console messages from interrupting commands, use the logging synchronous command</p>
+    <ul>
+      <li>logging synchronous</li>
+    </ul>
+
+    <p>configure the vty lines to accept SSH connections only</p>
+    <ul>
+      <li>transport input ssh</li>
+    </ul>
+
+    <p>configure sessions to disconnect after six minutes of inactivity</p>
+    <ul>
+      <li>exec-timeout 6 0</li>
     </ul>
 
     <p>enable login using the local database</p>
     <ul>
-      <li>R2(config-line)# login local</li>
+      <li>login local</li>
     </ul>
 
     <p>Create a banner</p>
     <ul>
-      <li>R2(config)# banner motd $ WARNING Authorized Users Only! $</li>
+      <li>banner motd $ WARNING Authorized Users Only! $</li>
     </ul>
 
     <p>Enable IPv6 Routing</p>
     <ul>
-      <li>R2(config)# ipv6 unicast-routing</li>
+      <li>ipv6 unicast-routing</li>
     </ul>
   </main>
 
